@@ -1,6 +1,8 @@
 # ARTthenticity Bridge
 
-🎥 **Demo Video**: [Watch the ARTthenticity Bridge Demo](https://youtu.be/uwGU7zbNPow?feature=shared)
+🎥 **Demo Video**
+
+[![ARTthenticity Bridge Demo](https://img.youtube.com/vi/uwGU7zbNPow/0.jpg)](https://youtu.be/uwGU7zbNPow?feature=shared)
 
 A cross-chain token bridge implementation using Hyperbridge and Polkadot for secure token transfers between Ethereum and Polkadot networks.
 
