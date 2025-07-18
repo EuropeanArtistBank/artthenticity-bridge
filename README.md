@@ -1,12 +1,12 @@
-# 🌉 Cross-Chain Token Bridge
+# ARTthenticity Bridge
 
-Ein interoperables Smart-Contract-Projekt mit **Hyperbridge** & **Polkadot** für Cross-Chain Token Transfers zwischen Ethereum und Polkadot.
+A cross-chain token bridge implementation using Hyperbridge and Polkadot for secure token transfers between Ethereum and Polkadot networks.
 
-## 🎯 Projektübersicht
+## Overview
 
-Dieses Projekt implementiert eine **Cross-Chain Token Bridge** basierend auf dem **ISMP (Interoperable State Machine Protocol)** von Hyperbridge. Es ermöglicht sichere Token-Transfers zwischen Ethereum und Polkadot-Netzwerken.
+This project implements a cross-chain token bridge based on the ISMP (Interoperable State Machine Protocol) by Hyperbridge. It enables secure token transfers between Ethereum and Polkadot networks.
 
-### 🏗️ Architektur
+### Architecture
 
 ```
 ┌─────────────────┐    ┌──────────────────┐    ┌─────────────────┐
@@ -19,124 +19,124 @@ Dieses Projekt implementiert eine **Cross-Chain Token Bridge** basierend auf dem
 └─────────────────┘    └──────────────────┘    └─────────────────┘
 ```
 
-## 🚀 Features
+## Features
 
-- ✅ **Cross-Chain Token Transfers** zwischen Ethereum und Polkadot
-- ✅ **ISMP Protocol Integration** mit Hyperbridge
-- ✅ **Moderne React Frontend** mit Polkadot.js Integration
-- ✅ **Comprehensive Testing** mit Hardhat
-- ✅ **Multi-Network Support** (Rococo, Westend, Kusama, Polkadot)
-- ✅ **Wallet Integration** (MetaMask, Polkadot.js Extension)
-- ✅ **Real-time Transfer Tracking**
-- ✅ **Responsive Design**
+- Cross-chain token transfers between Ethereum and Polkadot
+- ISMP protocol integration with Hyperbridge
+- React frontend with Polkadot.js integration
+- Comprehensive testing with Hardhat
+- Multi-network support (Rococo, Westend, Kusama, Polkadot)
+- Wallet integration (MetaMask, Polkadot.js Extension)
+- Real-time transfer tracking
+- Responsive design
 
-## 📋 Voraussetzungen
+## Requirements
 
 ### System Requirements
-- **Node.js** 18+ 
-- **npm** oder **yarn**
-- **Git**
+- Node.js 18+
+- npm or yarn
+- Git
 
 ### Blockchain Tools
-- **MetaMask** (Ethereum Wallet)
-- **Polkadot.js Extension** (Polkadot Wallet)
-- **Hardhat** (Smart Contract Development)
+- MetaMask (Ethereum Wallet)
+- Polkadot.js Extension (Polkadot Wallet)
+- Hardhat (Smart Contract Development)
 
-## 🛠️ Installation
+## Installation
 
-### 1. Repository klonen
+### 1. Clone Repository
 ```bash
 git clone <repository-url>
-cd my-polkadot-app
+cd artthenticity-bridge
 ```
 
-### 2. Dependencies installieren
+### 2. Install Dependencies
 ```bash
 npm install
 ```
 
 ### 3. Environment Setup
 ```bash
-# .env Datei erstellen
+# Create .env file
 cp .env.example .env
 
-# Environment Variablen konfigurieren
+# Configure environment variables
 SEPOLIA_URL=https://sepolia.infura.io/v3/YOUR-PROJECT-ID
 PRIVATE_KEY=your-private-key-here
 ETHERSCAN_API_KEY=your-etherscan-api-key
 ```
 
-## 🏃‍♂️ Entwicklung
+## Development
 
-### Smart Contracts kompilieren
+### Compile Smart Contracts
 ```bash
 npx hardhat compile
 ```
 
-### Tests ausführen
+### Run Tests
 ```bash
-# Alle Tests
+# All tests
 npx hardhat test
 
-# Spezifische Tests
+# Specific tests
 npx hardhat test test/CrossChainTokenModule.test.js
 ```
 
-### Lokale Entwicklung
+### Local Development
 ```bash
-# Hardhat Node starten
+# Start Hardhat node
 npx hardhat node
 
-# Contracts deployen
+# Deploy contracts
 npx hardhat run scripts/deploy.js --network localhost
 
-# Frontend starten
+# Start frontend
 npm start
 ```
 
-### Deployment auf Testnet
+### Deploy to Testnet
 ```bash
-# Sepolia Testnet
+# Sepolia testnet
 npx hardhat run scripts/deploy.js --network sepolia
 
-# Rococo Testnet
+# Rococo testnet
 npx hardhat run scripts/deploy.js --network rococo
 ```
 
-## 📁 Projektstruktur
+## Project Structure
 
 ```
-my-polkadot-app/
+artthenticity-bridge/
 ├── contracts/                 # Smart Contracts
 │   ├── interfaces/           # ISMP Interfaces
 │   │   ├── IIsmpHost.sol
 │   │   ├── IIsmpModule.sol
 │   │   └── IDispatcher.sol
-│   ├── BaseIsmpModule.sol    # Basis ISMP Module
+│   ├── BaseIsmpModule.sol    # Base ISMP Module
 │   ├── CrossChainTokenModule.sol  # Token Transfer Module
-│   ├── MockIsmpHost.sol      # Mock für Testing
+│   ├── MockIsmpHost.sol      # Mock for Testing
 │   └── MockERC20.sol         # Test Token
 ├── src/                      # React Frontend
-│   ├── App.tsx              # Hauptkomponente
+│   ├── App.tsx              # Main Component
 │   ├── App.css              # Styling
 │   └── index.tsx            # Entry Point
 ├── test/                     # Tests
 │   └── CrossChainTokenModule.test.js
 ├── scripts/                  # Deployment Scripts
 │   └── deploy.js
-├── hardhat.config.js         # Hardhat Konfiguration
+├── hardhat.config.js         # Hardhat Configuration
 └── package.json
 ```
 
-## 🔧 Smart Contracts
+## Smart Contracts
 
 ### Core Contracts
 
 #### `CrossChainTokenModule.sol`
-Das Hauptmodul für Cross-Chain Token Transfers:
+Main module for cross-chain token transfers:
 
 ```solidity
-// Token zu Polkadot senden
+// Send tokens to Polkadot
 function sendToPolkadot(
     address token,
     bytes memory recipient,
@@ -144,109 +144,109 @@ function sendToPolkadot(
     bytes memory destChain
 ) external payable;
 
-// Incoming Transfers verarbeiten
+// Process incoming transfers
 function onAccept(bytes memory from, bytes memory data) external;
 ```
 
 #### `BaseIsmpModule.sol`
-Basis-Klasse für alle ISMP Module mit gemeinsamer Funktionalität.
+Base class for all ISMP modules with common functionality.
 
 #### `MockIsmpHost.sol`
-Mock-Implementierung des ISMP Hosts für Testing.
+Mock implementation of ISMP host for testing.
 
 ### ISMP Protocol
 
-Das Projekt implementiert das **Interoperable State Machine Protocol**:
+The project implements the Interoperable State Machine Protocol:
 
-- **IIsmpHost**: Zentrale Datenspeicherung
-- **IIsmpModule**: Empfangslogik für Cross-Chain Nachrichten
-- **IDispatcher**: Nachrichten-Routing zwischen Chains
+- **IIsmpHost**: Central data storage
+- **IIsmpModule**: Receiving logic for cross-chain messages
+- **IDispatcher**: Message routing between chains
 
-## 🌐 Netzwerke
+## Networks
 
-### Unterstützte Netzwerke
+### Supported Networks
 
-| Netzwerk | Chain ID | RPC URL | Status |
-|----------|----------|---------|--------|
-| **Rococo** | 1000 | `wss://rococo-rpc.polkadot.io` | Testnet |
-| **Westend** | 1001 | `wss://westend-rpc.polkadot.io` | Testnet |
-| **Kusama** | 2000 | `wss://kusama-rpc.polkadot.io` | Mainnet |
-| **Polkadot** | 2001 | `wss://rpc.polkadot.io` | Mainnet |
-| **Sepolia** | 11155111 | `https://sepolia.infura.io` | Testnet |
+| Network | Chain ID | RPC URL | Status |
+|---------|----------|---------|--------|
+| Rococo | 1000 | `wss://rococo-rpc.polkadot.io` | Testnet |
+| Westend | 1001 | `wss://westend-rpc.polkadot.io` | Testnet |
+| Kusama | 2000 | `wss://kusama-rpc.polkadot.io` | Mainnet |
+| Polkadot | 2001 | `wss://rpc.polkadot.io` | Mainnet |
+| Sepolia | 11155111 | `https://sepolia.infura.io` | Testnet |
 
 ### Faucets
 
-Für Testnet-Token:
+For testnet tokens:
 
-- **Rococo DOT**: https://faucet.parity.io/
-- **Westend DOT**: https://westend-faucet.polkadot.io/
-- **Sepolia ETH**: https://sepoliafaucet.com/
+- Rococo DOT: https://faucet.parity.io/
+- Westend DOT: https://westend-faucet.polkadot.io/
+- Sepolia ETH: https://sepoliafaucet.com/
 
-## 💰 Gebühren
+## Fees
 
 ### Transfer Fees
-- **Protokollgebühr**: 0.001 ETH (konfigurierbar)
-- **Relayer Fee**: Freiwillige Belohnung
-- **Zahlung**: Native Token (ETH) oder Stablecoin
+- Protocol fee: 0.001 ETH (configurable)
+- Relayer fee: Voluntary reward
+- Payment: Native token (ETH) or stablecoin
 
 ### Fee Management
 ```solidity
-// Fee anpassen
+// Adjust fee
 function setTransferFee(uint256 newFee) external;
 
-// Fees abheben
+// Withdraw fees
 function withdrawFees() external;
 ```
 
-## 🔐 Sicherheit
+## Security
 
 ### Best Practices
-- ✅ **Access Control** für Admin-Funktionen
-- ✅ **Reentrancy Protection** mit OpenZeppelin
-- ✅ **Input Validation** für alle Parameter
-- ✅ **Event Logging** für Transparenz
-- ✅ **Emergency Recovery** Funktionen
+- Access control for admin functions
+- Reentrancy protection with OpenZeppelin
+- Input validation for all parameters
+- Event logging for transparency
+- Emergency recovery functions
 
 ### Audit Recommendations
-- [ ] Externe Smart Contract Audit
-- [ ] Formal Verification
-- [ ] Penetration Testing
-- [ ] Economic Security Review
+- External smart contract audit
+- Formal verification
+- Penetration testing
+- Economic security review
 
-## 🧪 Testing
+## Testing
 
 ### Test Coverage
 ```bash
-# Test Coverage Report
+# Test coverage report
 npx hardhat coverage
 
-# Gas Usage Report
+# Gas usage report
 REPORT_GAS=true npx hardhat test
 ```
 
-### Test Szenarien
-- ✅ Contract Deployment
-- ✅ Cross-Chain Message Sending
-- ✅ Message Reception & Processing
-- ✅ Fee Management
-- ✅ Error Handling
-- ✅ Access Control
+### Test Scenarios
+- Contract deployment
+- Cross-chain message sending
+- Message reception and processing
+- Fee management
+- Error handling
+- Access control
 
-## 🚀 Deployment
+## Deployment
 
 ### Production Deployment
 
-1. **Contracts deployen**:
+1. **Deploy contracts**:
 ```bash
 npx hardhat run scripts/deploy.js --network mainnet
 ```
 
-2. **Contracts verifizieren**:
+2. **Verify contracts**:
 ```bash
 npx hardhat verify --network mainnet <CONTRACT_ADDRESS> <CONSTRUCTOR_ARGS>
 ```
 
-3. **Frontend konfigurieren**:
+3. **Configure frontend**:
 ```javascript
 // src/config/networks.js
 export const NETWORKS = {
@@ -266,7 +266,7 @@ ETHERSCAN_API_KEY=your-etherscan-key
 POLKADOT_RPC_URL=wss://rpc.polkadot.io
 ```
 
-## 📊 Monitoring
+## Monitoring
 
 ### Events Tracking
 ```solidity
@@ -287,29 +287,29 @@ event TransferExecuted(
 ```
 
 ### Analytics
-- Transfer Volume
-- Success/Failure Rates
-- Gas Usage
-- Network Performance
+- Transfer volume
+- Success/failure rates
+- Gas usage
+- Network performance
 
-## 🤝 Beitragen
+## Contributing
 
 ### Development Workflow
-1. Fork das Repository
-2. Feature Branch erstellen: `git checkout -b feature/amazing-feature`
-3. Änderungen committen: `git commit -m 'Add amazing feature'`
-4. Branch pushen: `git push origin feature/amazing-feature`
-5. Pull Request erstellen
+1. Fork the repository
+2. Create feature branch: `git checkout -b feature/amazing-feature`
+3. Commit changes: `git commit -m 'Add amazing feature'`
+4. Push branch: `git push origin feature/amazing-feature`
+5. Create pull request
 
 ### Code Standards
-- **Solidity**: Solidity Style Guide
-- **TypeScript**: ESLint + Prettier
-- **Testing**: 90%+ Coverage
-- **Documentation**: JSDoc für alle Funktionen
+- Solidity: Solidity Style Guide
+- TypeScript: ESLint + Prettier
+- Testing: 90%+ coverage
+- Documentation: JSDoc for all functions
 
-## 📚 Dokumentation
+## Documentation
 
-### Weiterführende Links
+### Additional Links
 - [Hyperbridge Documentation](https://hyperbridge.network/)
 - [ISMP Protocol Spec](https://specs.hyperbridge.network/)
 - [Polkadot.js API](https://polkadot.js.org/docs/)
@@ -320,44 +320,44 @@ event TransferExecuted(
 - [ISMP Module Development](docs/ismp-module-guide.md)
 - [Frontend Integration](docs/frontend-integration.md)
 
-## 📄 Lizenz
+## License
 
-Dieses Projekt ist unter der MIT Lizenz lizenziert - siehe [LICENSE](LICENSE) Datei für Details.
+This project is licensed under the MIT License - see [LICENSE](LICENSE) file for details.
 
-## 🆘 Support
+## Support
 
-### Häufige Probleme
+### Common Issues
 
-**Polkadot.js Extension nicht gefunden**
+**Polkadot.js Extension not found**
 ```bash
-# Browser Extension installieren
+# Install browser extension
 # https://polkadot.js.org/extension/
 ```
 
 **MetaMask Connection Failed**
 ```bash
-# MetaMask installieren und Netzwerk hinzufügen
+# Install MetaMask and add network
 # https://metamask.io/
 ```
 
 **Contract Deployment Failed**
 ```bash
-# Gas Limit erhöhen
+# Increase gas limit
 npx hardhat run scripts/deploy.js --network mainnet --gas-limit 5000000
 ```
 
 ### Community
-- **Discord**: [Hyperbridge Community](https://discord.gg/hyperbridge)
-- **Telegram**: [Polkadot Community](https://t.me/PolkadotOfficial)
-- **GitHub Issues**: [Project Issues](https://github.com/your-repo/issues)
+- Discord: [Hyperbridge Community](https://discord.gg/hyperbridge)
+- Telegram: [Polkadot Community](https://t.me/PolkadotOfficial)
+- GitHub Issues: [Project Issues](https://github.com/your-repo/issues)
 
-## 🙏 Danksagungen
+## Acknowledgments
 
-- **Hyperbridge Team** für das ISMP Protocol
-- **Polkadot Foundation** für die Substrate Framework
-- **OpenZeppelin** für die Security Libraries
-- **Hardhat Team** für das Development Framework
+- Hyperbridge Team for the ISMP Protocol
+- Polkadot Foundation for the Substrate Framework
+- OpenZeppelin for the Security Libraries
+- Hardhat Team for the Development Framework
 
 ---
 
-**⚠️ Disclaimer**: Dieses Projekt ist für Bildungszwecke gedacht. Verwenden Sie es in Produktionsumgebungen auf eigene Gefahr.
+**Disclaimer**: This project is for educational purposes. Use in production environments at your own risk.
