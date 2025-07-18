@@ -371,3 +371,10 @@ npx hardhat run scripts/deploy.js --network mainnet --gas-limit 5000000
 ---
 
 **Disclaimer**: This project is for educational purposes. Use in production environments at your own risk.
+
+
+
+## Contact
+
+For questions, collaborations, or deployment in enterprise settings:
+📩 *[gordon.dyballa@bht-berlin.de](mailto:gordon.dyballa@bht-berlin.de)*
