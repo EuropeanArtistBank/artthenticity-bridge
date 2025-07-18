@@ -2,7 +2,13 @@
 
 🎥 **Demo Video**
 
-[![ARTthenticity Bridge Demo](https://img.youtube.com/vi/uwGU7zbNPow/0.jpg)](https://youtu.be/uwGU7zbNPow?feature=shared)
+<div align="center">
+  <a href="https://youtu.be/uwGU7zbNPow?feature=shared">
+    <img src="https://img.youtube.com/vi/uwGU7zbNPow/maxresdefault.jpg" alt="ARTthenticity Bridge Demo" width="600" style="border-radius: 8px; box-shadow: 0 4px 8px rgba(0,0,0,0.1);">
+    <br>
+    <kbd>▶️ Click to Watch Demo Video</kbd>
+  </a>
+</div>
 
 A cross-chain token bridge implementation using Hyperbridge and Polkadot for secure token transfers between Ethereum and Polkadot networks.
 
